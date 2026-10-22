@@ -1,122 +1,53 @@
-import { useState } from 'react'
-import heroImg from './assets/hero.png'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
 import './App.css'
+import Titulo from './components/Titulo';
+import Aluno from './components/Aluno';
+import Nota from './components/Nota';
+import Produto from './components/Produto';
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <section id="center">
-        <div className="hero">
-          <img src={heroImg} className="base" width="170" height="179" alt="" />
-          <img src={reactLogo} className="framework" alt="React logo" />
-          <img src={viteLogo} className="vite" alt="Vite logo" />
-        </div>
-        <div>
-          <h1>Get started</h1>
-          <p>
-            Edit <code>src/App.jsx</code> and save to test <code>HMR</code>
-          </p>
-        </div>
-        <button
-          type="button"
-          className="counter"
-          onClick={() => setCount((count) => count + 1)}
-        >
-          Count is {count}
-        </button>
-      </section>
+    <div>
+      <Titulo />
 
-      <div className="ticks"></div>
+      <h2>Lista de Alunos</h2>
+      <Aluno nome="Carlos" turma="Desenvolvimento de Sistemas" />
+      <Aluno nome="Maria" turma="Desenvolvimento de Sistemas" />
+      <Aluno nome="Beatriz" turma="Desenvolvimento de Sistemas" />
 
-      <section id="next-steps">
-        <div id="docs">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#documentation-icon"></use>
-          </svg>
-          <h2>Documentation</h2>
-          <p>Your questions, answered</p>
-          <ul>
-            <li>
-              <a href="https://vite.dev/" target="_blank">
-                <img className="logo" src={viteLogo} alt="" />
-                Explore Vite
-              </a>
-            </li>
-            <li>
-              <a href="https://react.dev/" target="_blank">
-                <img className="button-icon" src={reactLogo} alt="" />
-                Learn more
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div id="social">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#social-icon"></use>
-          </svg>
-          <h2>Connect with us</h2>
-          <p>Join the Vite community</p>
-          <ul>
-            <li>
-              <a href="https://github.com/vitejs/vite" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#github-icon"></use>
-                </svg>
-                GitHub
-              </a>
-            </li>
-            <li>
-              <a href="https://chat.vite.dev/" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#discord-icon"></use>
-                </svg>
-                Discord
-              </a>
-            </li>
-            <li>
-              <a href="https://x.com/vite_js" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#x-icon"></use>
-                </svg>
-                X.com
-              </a>
-            </li>
-            <li>
-              <a href="https://bsky.app/profile/vite.dev" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#bluesky-icon"></use>
-                </svg>
-                Bluesky
-              </a>
-            </li>
-          </ul>
-        </div>
-      </section>
 
-      <div className="ticks"></div>
-      <section id="spacer"></section>
-    </>
-  )
+      <Nota disciplina="React" nota={8.5} />
+      <Nota disciplina="React" nota={10.0} />
+      <Nota disciplina="React" nota={5.5} />
+
+      <Produto
+        nome="Mouse"
+        descricao="Mouse com iluminação RGB"
+        preco={120}
+        disponivel={true}
+      />
+
+      <Produto
+        nome="Teclado"
+        descricao="Teclado com iluminação RGB"
+        preco={350}
+        disponivel={false}
+      />
+
+      <Produto
+        nome="Monitor"
+        descricao="Monitor LG 24 Full HD 100Hz"
+        preco={650}
+        disponivel={true}
+      />
+
+      <Produto
+        nome="Computador Completo 2Eletro Speed Intel Core i5"
+        descricao="É uma solução de desktop voltada para o uso de escritório, estudos e tarefas 
+        do dia a dia, com opções de configuração que variam entre 8GB ou 16GB de RAM e SSDs de 256GB a 1TB"
+        preco={1800}
+        disponivel={false}
+      />
+    </div>
+  );
 }
-
-export default App
+export default App;
